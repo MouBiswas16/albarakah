@@ -1,0 +1,2 @@
+C:/Users/qtmea/Vs Code Files/albarakah/android/app/.cxx/Debug/4m13v6e6/armeabi-v7a/CMakeFiles/edit_cache.dir
+C:/Users/qtmea/Vs Code Files/albarakah/android/app/.cxx/Debug/4m13v6e6/armeabi-v7a/CMakeFiles/rebuild_cache.dir
