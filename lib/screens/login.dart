@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, must_be_immutable
 
 import 'package:albarakah/core/export/export.dart';
+import 'package:albarakah/screens/summary.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -123,8 +124,16 @@ class _LoginScreenState extends State<LoginScreen> {
                               ),
                             ),
                           ),
+                          /*            Go to Summary Screen Here            */
                           TextButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => SummaryScreen(),
+                                ),
+                              );
+                            },
                             style: TextButton.styleFrom(
                               padding: EdgeInsets.only(
                                 top: 8,

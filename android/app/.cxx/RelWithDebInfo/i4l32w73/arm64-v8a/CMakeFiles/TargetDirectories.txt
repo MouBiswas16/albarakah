@@ -1,0 +1,2 @@
+C:/Users/qtmea/Vs Code Files/albarakah/android/app/.cxx/RelWithDebInfo/i4l32w73/arm64-v8a/CMakeFiles/edit_cache.dir
+C:/Users/qtmea/Vs Code Files/albarakah/android/app/.cxx/RelWithDebInfo/i4l32w73/arm64-v8a/CMakeFiles/rebuild_cache.dir
