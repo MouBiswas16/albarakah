@@ -2,6 +2,7 @@
 
 import 'package:albarakah/core/export/export.dart';
 
+
 class SummaryScreen extends StatelessWidget {
   const SummaryScreen({super.key});
 
@@ -98,7 +99,14 @@ class SummaryScreen extends StatelessWidget {
             SizedBox(height: 18),
             /*            Search button Here            */
             InkWell(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => HomeScreen(),
+                  ),
+                );
+              },
               child: Container(
                 decoration: BoxDecoration(
                   color: primaryColor,
