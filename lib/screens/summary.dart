@@ -2,7 +2,6 @@
 
 import 'package:albarakah/core/export/export.dart';
 
-
 class SummaryScreen extends StatelessWidget {
   const SummaryScreen({super.key});
 
@@ -27,10 +26,9 @@ class SummaryScreen extends StatelessWidget {
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: EdgeInsets.all(8),
         child: Column(
           children: [
-            SizedBox(height: 8),
             /*            From Container Here            */
             Container(
               decoration: BoxDecoration(
@@ -127,101 +125,111 @@ class SummaryScreen extends StatelessWidget {
               ),
             ),
             SizedBox(height: 18),
-            /*            Details container Here            */
             Container(
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.width * 0.42,
               decoration: BoxDecoration(
                 color: Colors.green[100],
                 borderRadius: BorderRadius.circular(8),
               ),
               child: Padding(
-                padding:
-                    EdgeInsets.only(right: 18, left: 18, top: 18, bottom: 18),
-                child: Column(
+                padding: const EdgeInsets.only(
+                    left: 18, bottom: 18, top: 18, right: 24),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
+                          textAlign: TextAlign.left,
                           "Delivered",
                           style: TextStyle(
                               fontWeight: FontWeight.bold,
                               color: blackTextColor),
                         ),
-                        Text(
-                          "0",
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              color: blackTextColor),
-                        ),
-                        Text(
-                          "0 TK",
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              color: blackTextColor),
-                        ),
-                      ],
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
+                        SizedBox(height: 8),
                         Text(
                           "Cancelled",
                           style: TextStyle(
                               fontWeight: FontWeight.bold,
                               color: blackTextColor),
                         ),
-                        Text(
-                          "0",
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              color: blackTextColor),
-                        ),
-                        Text(
-                          "0 TK",
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              color: blackTextColor),
-                        ),
-                      ],
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
+                        SizedBox(height: 8),
                         Text(
                           "Pending",
                           style: TextStyle(
                               fontWeight: FontWeight.bold,
                               color: blackTextColor),
                         ),
-                        Text(
-                          "0",
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              color: blackTextColor),
-                        ),
-                        Text(
-                          "0 TK",
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              color: blackTextColor),
-                        ),
-                      ],
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
+                        SizedBox(height: 8),
                         Text(
                           "Total Parcel",
                           style: TextStyle(
                               fontWeight: FontWeight.bold,
                               color: blackTextColor),
                         ),
+                      ],
+                    ),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
                         Text(
                           "0",
                           style: TextStyle(
                               fontWeight: FontWeight.bold,
                               color: blackTextColor),
                         ),
+                        SizedBox(height: 8),
+                        Text(
+                          "0",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: blackTextColor),
+                        ),
+                        SizedBox(height: 8),
+                        Text(
+                          "0 ",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: blackTextColor),
+                        ),
+                        SizedBox(height: 8),
+                        Text(
+                          "0 ",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: blackTextColor),
+                        ),
+                      ],
+                    ),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Text(
+                          "0 TK",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: blackTextColor),
+                        ),
+                        SizedBox(height: 8),
+                        Text(
+                          "0 TK",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: blackTextColor),
+                        ),
+                        SizedBox(height: 8),
+                        Text(
+                          "0 TK",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: blackTextColor),
+                        ),
+                        SizedBox(height: 8),
                         Text(
                           "0 TK",
                           style: TextStyle(
@@ -233,10 +241,42 @@ class SummaryScreen extends StatelessWidget {
                   ],
                 ),
               ),
-            ),
+            )
           ],
         ),
       ),
+       /*            Bottom Navigation Bar Here            */
+      // bottomNavigationBar: BottomAppBar(
+      //   color: Colors.transparent,
+      //   child: Row(
+      //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      //     children: [
+      //      Padding(
+      //         padding: EdgeInsets.only(left: 18),
+      //         child: InkWell(
+      //           onTap: () {},
+      //           child: Column(
+      //             mainAxisSize: MainAxisSize.min,
+      //             children: [
+      //               Icon(
+      //                 Icons.search,
+      //                 color: Colors.white,
+      //               ),
+      //               Text(
+      //                 "Track ID",
+      //                 style: TextStyle(
+      //                   color: Colors.white,
+      //                   fontSize: 12,
+      //                 ),
+      //               ),
+      //             ],
+      //           ),
+      //         ),
+      //       ),
+      //     ],
+      //   ),
+        
+      // ),
     );
   }
 }

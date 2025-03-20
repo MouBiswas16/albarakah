@@ -2,9 +2,16 @@
 
 import 'package:albarakah/core/export/export.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  // bool _ischeckBalance = false;
+  // bool _isBanance = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,21 +62,38 @@ class HomeScreen extends StatelessWidget {
                 decoration: BoxDecoration(
                     color: primaryColor,
                     borderRadius: BorderRadius.circular(3)),
-                child: Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(8),
-                    color: Colors.white,
-                  ),
-                  margin:
-                      EdgeInsets.only(top: 20, bottom: 20, left: 48, right: 48),
-                  child: Text(
-                    textAlign: TextAlign.center,
-                    "Check Balance",
-                    style: TextStyle(
-                      color: blackTextColor,
-                      fontSize: 18,
-                    ),
-                  ),
+                child: InkWell(
+                  onTap: () {
+                    // setState(() {
+                    //   _ischeckBalance = !_ischeckBalance;
+                    // });
+                  },
+                  child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(8),
+                        color: Colors.white,
+                      ),
+                      margin: EdgeInsets.only(
+                          top: 20, bottom: 20, left: 48, right: 48),
+                      child:
+                          // _ischeckBalance? true?
+                          Text(
+                        textAlign: TextAlign.center,
+                        "Check Balance",
+                        style: TextStyle(
+                          color: blackTextColor,
+                          fontSize: 18,
+                        ),
+                      )
+                      //  : Text(
+                      //   textAlign: TextAlign.center,
+                      //  "0 TK",
+                      //   style: TextStyle(
+                      //     color: blackTextColor,
+                      //     fontSize: 18,
+                      //   ),
+                      // ),
+                      ),
                 ),
               ),
             ),
@@ -270,7 +294,7 @@ class HomeScreen extends StatelessWidget {
                             SizedBox(
                               height: 80,
                               width: MediaQuery.of(context).size.height / 4,
-                              child: paymentRequest,
+                              child: support,
                             ),
                             SizedBox(height: 3),
                             Text(
@@ -297,38 +321,32 @@ class HomeScreen extends StatelessWidget {
                 children: [
                   Expanded(
                     flex: 1,
-                    child: InkWell(
-                      onTap: () {},
-                      child: SizedBox(
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            SizedBox(
-                              height: 80,
-                              width: MediaQuery.of(context).size.height / 4,
-                            ),
-                            SizedBox(height: 3),
-                          ],
-                        ),
+                    child: SizedBox(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          SizedBox(
+                            height: 80,
+                            width: MediaQuery.of(context).size.height / 4,
+                          ),
+                          SizedBox(height: 3),
+                        ],
                       ),
                     ),
                   ),
                   SizedBox(width: 8),
                   Expanded(
                     flex: 1,
-                    child: InkWell(
-                      onTap: () {},
-                      child: SizedBox(
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            SizedBox(
-                              height: 80,
-                              width: MediaQuery.of(context).size.height / 4,
-                            ),
-                            SizedBox(height: 3),
-                          ],
-                        ),
+                    child: SizedBox(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          SizedBox(
+                            height: 80,
+                            width: MediaQuery.of(context).size.height / 4,
+                          ),
+                          SizedBox(height: 3),
+                        ],
                       ),
                     ),
                   ),
@@ -338,6 +356,7 @@ class HomeScreen extends StatelessWidget {
           ],
         ),
       ),
+      /*            FloatingAction button Here            */
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
@@ -351,6 +370,7 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
       ),
+      /*            Bottom Navigation Bar Here            */
       bottomNavigationBar: BottomAppBar(
         elevation: 1,
         color: primaryColor,
@@ -363,22 +383,25 @@ class HomeScreen extends StatelessWidget {
           mainAxisSize: MainAxisSize.max,
           children: [
             Padding(
-              padding: EdgeInsets.only(left: 8),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Icon(
-                    Icons.search,
-                    color: Colors.white,
-                  ),
-                  Text(
-                    "Track ID",
-                    style: TextStyle(
+              padding: EdgeInsets.only(left: 18),
+              child: InkWell(
+                onTap: () {},
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Icon(
+                      Icons.search,
                       color: Colors.white,
-                      fontSize: 12,
                     ),
-                  ),
-                ],
+                    Text(
+                      "Track ID",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 12,
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
             Padding(
@@ -396,10 +419,17 @@ class HomeScreen extends StatelessWidget {
                 ],
               ),
             ),
-            InkWell(
-              onTap: () => SummaryScreen(),
-              child: Padding(
-                padding: EdgeInsets.only(right: 8),
+            Padding(
+              padding: EdgeInsets.only(right: 18),
+              child: InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => SummaryScreen(),
+                    ),
+                  );
+                },
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
